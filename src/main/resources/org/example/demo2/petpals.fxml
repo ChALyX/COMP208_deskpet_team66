@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+-->
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import com.leewyatt.rxcontrols.controls.RXDigit?>
+<?import com.leewyatt.rxcontrols.controls.RXLineButton?>
+<?import com.leewyatt.rxcontrols.controls.RXTextField?>
+<?import com.leewyatt.rxcontrols.controls.RXTranslationButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="leftPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.Controller">
+    <children>
+        <SplitPane fx:id="mySplitPane" dividerPositions="0.2792642140468227" layoutX="74.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="139.0">
+                    <children>
+                        <Label layoutX="22.0" layoutY="33.0" text="Petpal" underline="true">
+                            <font>
+                                <Font name="Bauhaus 93" size="45.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="0.4728132387706856" endY="0.8203309692671396" startX="0.46572104018912525" startY="0.4680851063829788">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color red="0.15162037312984467" green="0.43570905923843384" blue="0.8618420958518982" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="0.5898544192314148" green="0.5073000192642212" blue="0.8899999856948853" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <RXTranslationButton layoutX="25.0" layoutY="199.0" prefHeight="52.0" prefWidth="116.0" text="Settings">
+                            <graphic>
+                                <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@ui/设置.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Bauhaus 93" size="30.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </RXTranslationButton>
+                        <RXTranslationButton fx:id="launchButton" layoutX="18.0" layoutY="288.0" onAction="#launchPet" prefHeight="36.0" prefWidth="131.0" text="Start">
+                            <graphic>
+                                <ImageView fitHeight="37.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@ui/开始.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="Bauhaus 93" size="48.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </RXTranslationButton>
+                        <RXTranslationButton layoutX="25.0" layoutY="113.0" prefHeight="52.0" prefWidth="116.0" text="State">
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                            <font>
+                                <Font name="Bauhaus 93" size="31.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="39.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@ui/状态.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </RXTranslationButton>
+                    </children>
+                </AnchorPane>
+            <BorderPane>
+               <center>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="392.0">
+                          <children>
+                              <SplitPane fx:id="horizontalSplitPane" cacheShape="false" centerShape="false" dividerPositions="0.42" focusTraversable="false" layoutY="8.0" orientation="VERTICAL" pickOnBounds="false" prefHeight="398.0" prefWidth="428.0" scaleShape="false" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+                                  <items>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="421.0">
+                                 <children>
+                                    <JFXCheckBox checkedColor="#10349c" layoutX="14.0" layoutY="124.0" text="Allow Walking">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </JFXCheckBox>
+                                    <JFXSlider layoutX="325.0" layoutY="124.0" max="10.0" prefHeight="20.0" prefWidth="86.0" styleClass="jfx-slider" stylesheets="@css/slide.css" value="5.0" />
+                                    <Label layoutX="204.0" layoutY="124.0" text="Activity Level">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXCheckBox fx:id="allowInteractionCheckBox" checkedColor="#10349c" layoutX="14.0" layoutY="95.0" text="Allow Interaction">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </JFXCheckBox>
+                                    <RXLineButton fx:id="openNotepadButton" layoutX="9.0" layoutY="56.0" onAction="#handleOpenNotepad" prefHeight="33.0" prefWidth="163.0" text="Open Notepad ：">
+                                       <graphic>
+                                          <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                           <image>
+                                               <Image url="@ui/checklist.png" />
+                                           </image>
+                                           </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </RXLineButton>
+                                    <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="176.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@ui/人机交互.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="19.0" fitWidth="20.0" layoutX="156.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@ui/行走.png" />
+                                       </image></ImageView>
+                                    <Label layoutX="13.0" layoutY="4.0" text="Weather Today ：">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/天气.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <RXTranslationButton fx:id="searchButton" layoutX="312.0" layoutY="92.0" onAction="#handleSearchButtonAction" prefHeight="26.0" prefWidth="104.0" text="Quick search">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/search.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </RXTranslationButton>
+                                    <TextField fx:id="searchField" layoutX="204.0" layoutY="93.0" prefHeight="23.0" prefWidth="107.0" />
+                                    <RXLineButton layoutX="2.0" layoutY="26.0" prefHeight="32.0" prefWidth="187.0" text="Schedule Reminder">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/闹钟.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </RXLineButton>
+                                    <RXDigit fx:id="hoursOnesDigit" digit="2" layoutX="202.0" layoutY="30.0" prefHeight="25.0" prefWidth="13.0" />
+                                    <RXDigit fx:id="minutesTensDigit" digit="3" layoutX="224.0" layoutY="30.0" prefHeight="25.0" prefWidth="13.0" />
+                                    <RXDigit fx:id="minutesOnesDigit" digit="4" layoutX="241.0" layoutY="30.0" prefHeight="25.0" prefWidth="13.0" />
+                                    <Label fx:id="weatherLabel" layoutX="174.0" layoutY="4.0" text="rainy">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fx:id="iconWeather" fitHeight="16.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: #415f8c; -fx-border-width: 2; -fx-border-radius: 5;">
+                                             <image>
+                                                <Image url="@ui/小雨.png" />
+                                             </image>
+                                             <effect>
+                                                <Lighting>
+                                                   <bumpInput>
+                                                      <Shadow />
+                                                   </bumpInput>
+                                                   <light>
+                                                      <Light.Distant />
+                                                   </light>
+                                                </Lighting>
+                                             </effect>
+                                            
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Label fx:id="notepadContentLabel" layoutX="174.0" layoutY="63.0" text="Buy cat food by tomorrow~" wrapText="true">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="refreshButton" layoutX="250.0" onAction="#handleRefresh" prefHeight="27.0" prefWidth="116.0" text="Need refresh">
+                                       <graphic>
+                                          <ImageView fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/refresh.png" />
+                                             </image></ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="12.10084056854248" />
+                                       </font>
+                                    </JFXButton>
+                                    <RXDigit fx:id="secondsOnesDigit" digit="6" layoutX="279.0" layoutY="30.0" prefHeight="25.0" prefWidth="13.0" />
+                                    <RXDigit fx:id="secondsTensDigit" digit="5" layoutX="262.0" layoutY="30.0" prefHeight="25.0" prefWidth="13.0" />
+                                    <Label layoutX="217.0" layoutY="30.0" text="：">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="255.0" layoutY="30.0" text="：">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <RXDigit fx:id="hoursTensDigit" digit="7" layoutX="185.0" layoutY="30.0" prefHeight="25.0" prefWidth="13.0" />
+                                    <RXTextField fx:id="myTextField" layoutX="301.0" layoutY="32.0" onClickButton="#clearTextField" prefHeight="26.0" prefWidth="74.0" />
+                                    <RXTranslationButton fx:id="setReminderButton" layoutX="375.0" layoutY="32.0" onAction="#handleSetReminderAction" prefHeight="15.0" prefWidth="28.0" text="Set">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@ui/setalarm.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </RXTranslationButton>
+                                 </children>
+                              </AnchorPane>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="304.0" prefWidth="421.0" snapToPixel="false">
+                                          <children>
+                                    <JFXSlider layoutX="339.0" layoutY="51.0" max="30.0" min="3.0" prefHeight="20.0" prefWidth="86.0" styleClass="jfx-slider" stylesheets="@css/slide.css" value="15.0" />
+                                    <ImageView fitHeight="126.0" fitWidth="161.0" layoutX="12.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@ui/model.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ProgressBar fx:id="energyBar" layoutX="198.0" layoutY="101.0" prefWidth="200.0" progress="0.5" />
+                                    <ProgressBar fx:id="CleanBar" layoutX="198.0" layoutY="132.0" prefWidth="200.0" progress="0.5" />
+                                    <ProgressBar fx:id="MoodBar" layoutX="198.0" layoutY="165.0" prefWidth="200.0" progress="0.5" />
+                                    <Label layoutX="151.0" layoutY="102.0" text="Energy">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="129.0" layoutY="133.0" text="Cleanliness">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="155.0" layoutY="166.0" text="Mood">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="190.0" layoutY="51.0" text="Data Update Time">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXComboBox layoutX="339.0" layoutY="11.0" prefHeight="22.0" prefWidth="79.0" promptText="   Happy" />
+                                    <JFXToggleButton layoutX="-18.0" layoutY="1.0" prefHeight="42.0" prefWidth="208.0" text="Data calculation" toggleColor="#1d55ff" toggleLineColor="#609dff">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </JFXToggleButton>
+                                    <Label layoutX="190.0" layoutY="22.0" text="Display Status">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXComboBox layoutX="21.0" layoutY="52.0" prefHeight="23.0" prefWidth="131.0" promptText="           Default" />
+                                    <JFXButton fx:id="feedBtn" layoutX="239.0" layoutY="71.0" onAction="#feedPet" style="-fx-background-color: #609dff;" text="Feed" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="12.10084056854248" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="showerBtn" layoutX="309.0" layoutY="71.0" onAction="#bathePet" style="-fx-background-color: #609dff;" text="Bathe" textFill="WHITE">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="12.10084056854248" />
+                                       </font>
+                                    </JFXButton>
+                                          </children>
+                                      </AnchorPane>
+                                  </items>
+                              </SplitPane>
+                          </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+.jfx-toggle-button {
+    -jfx-toggle-color: #66ccff; /* 蓝色 */
+    -jfx-untoggle-color: #FAFAFA; /* 保持未激活状态下的颜色 */
+    -jfx-toggle-line-color: #66ccff; /* 蓝色边线 */
+    -jfx-untoggle-line-color: #999999; /* 保持未激活状态下边线的颜色 */
+    -jfx-size: 10.0; /* 保持原来的尺寸 */
+    -jfx-disable-visual-focus: false; /* 保持视觉焦点的视觉效果 */
+}
+.image-view {
+    -fx-border-color: #415f8c; /* 边框颜色 */
+    -fx-border-width: 2; /* 边框宽度 */
+    -fx-border-radius: 5; /* 边框圆角 */
+}
